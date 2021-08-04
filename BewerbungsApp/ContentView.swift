@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    var index = 0
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView{
+            List{
+                Text("Hello")
+                Text("Hello")
+                Text("Hello")
+            }
+        }
+        .preferredColorScheme(.dark)
     }
 }
 
