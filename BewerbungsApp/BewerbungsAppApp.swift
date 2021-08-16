@@ -16,7 +16,7 @@ struct BewerbungsAppApp: App {
     var body: some Scene {
         WindowGroup {
             StartSeiteBewerbung(liste: liste)
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)   
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .onChange(of: scenePhase) { _ in
             persistenceController.save()

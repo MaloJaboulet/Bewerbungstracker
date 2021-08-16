@@ -16,12 +16,15 @@
 		270F21832603EF2500D13D08 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270F21822603EF2500D13D08 /* Preview Assets.xcassets */; };
 		270F218C2603F1F300D13D08 /* EineBewerbungView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270F218B2603F1F300D13D08 /* EineBewerbungView.swift */; };
 		270F218F2603F23000D13D08 /* EineBewerbung.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270F218E2603F23000D13D08 /* EineBewerbung.swift */; };
+		272ADBD026BC909500E61689 /* MapDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272ADBCF26BC909500E61689 /* MapDisplay.swift */; };
 		274013E22605E7BD00F5F833 /* EineBewerbungAdden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274013E12605E7BD00F5F833 /* EineBewerbungAdden.swift */; };
 		274013E62605EF5B00F5F833 /* StartSeiteBewerbung.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274013E52605EF5B00F5F833 /* StartSeiteBewerbung.swift */; };
 		274013E92605F09300F5F833 /* BewerbungZeile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274013E82605F09300F5F833 /* BewerbungZeile.swift */; };
 		274013ED2606356700F5F833 /* BewerbungsListe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274013EC2606356700F5F833 /* BewerbungsListe.swift */; };
 		274013F126073A3C00F5F833 /* EineBewerbungEinstellungen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274013F026073A3B00F5F833 /* EineBewerbungEinstellungen.swift */; };
-		274013F42607AE3900F5F833 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274013F32607AE3500F5F833 /* Test.swift */; };
+		2744F2B826BDC549003D0603 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2744F2B726BDC549003D0603 /* MapView.swift */; };
+		2744F2BA26BDD439003D0603 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2744F2B926BDD439003D0603 /* CustomAlert.swift */; };
+		27EE550826C0833F006BB9AB /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE550726C0833F006BB9AB /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,12 +38,15 @@
 		270F21842603EF2500D13D08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		270F218B2603F1F300D13D08 /* EineBewerbungView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EineBewerbungView.swift; sourceTree = "<group>"; };
 		270F218E2603F23000D13D08 /* EineBewerbung.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EineBewerbung.swift; sourceTree = "<group>"; };
+		272ADBCF26BC909500E61689 /* MapDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDisplay.swift; sourceTree = "<group>"; };
 		274013E12605E7BD00F5F833 /* EineBewerbungAdden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EineBewerbungAdden.swift; sourceTree = "<group>"; };
 		274013E52605EF5B00F5F833 /* StartSeiteBewerbung.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSeiteBewerbung.swift; sourceTree = "<group>"; };
 		274013E82605F09300F5F833 /* BewerbungZeile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BewerbungZeile.swift; sourceTree = "<group>"; };
 		274013EC2606356700F5F833 /* BewerbungsListe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BewerbungsListe.swift; sourceTree = "<group>"; };
 		274013F026073A3B00F5F833 /* EineBewerbungEinstellungen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EineBewerbungEinstellungen.swift; sourceTree = "<group>"; };
-		274013F32607AE3500F5F833 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		2744F2B726BDC549003D0603 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		2744F2B926BDD439003D0603 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		27EE550726C0833F006BB9AB /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,11 +80,11 @@
 		270F217A2603EF1900D13D08 /* BewerbungsApp */ = {
 			isa = PBXGroup;
 			children = (
+				2744F2B626BDC537003D0603 /* Map */,
 				270F217B2603EF1900D13D08 /* BewerbungsAppApp.swift */,
 				270F217D2603EF1900D13D08 /* ContentView.swift */,
 				270F218B2603F1F300D13D08 /* EineBewerbungView.swift */,
 				274013E52605EF5B00F5F833 /* StartSeiteBewerbung.swift */,
-				274013F32607AE3500F5F833 /* Test.swift */,
 				274013F026073A3B00F5F833 /* EineBewerbungEinstellungen.swift */,
 				274013EC2606356700F5F833 /* BewerbungsListe.swift */,
 				274013E82605F09300F5F833 /* BewerbungZeile.swift */,
@@ -99,6 +105,17 @@
 				270F21822603EF2500D13D08 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2744F2B626BDC537003D0603 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				272ADBCF26BC909500E61689 /* MapDisplay.swift */,
+				2744F2B726BDC549003D0603 /* MapView.swift */,
+				2744F2B926BDD439003D0603 /* CustomAlert.swift */,
+				27EE550726C0833F006BB9AB /* LocationManager.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,7 +193,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2744F2B826BDC549003D0603 /* MapView.swift in Sources */,
 				270F217E2603EF1900D13D08 /* ContentView.swift in Sources */,
+				27EE550826C0833F006BB9AB /* LocationManager.swift in Sources */,
+				272ADBD026BC909500E61689 /* MapDisplay.swift in Sources */,
 				274013E22605E7BD00F5F833 /* EineBewerbungAdden.swift in Sources */,
 				270F218F2603F23000D13D08 /* EineBewerbung.swift in Sources */,
 				274013E62605EF5B00F5F833 /* StartSeiteBewerbung.swift in Sources */,
@@ -184,10 +204,10 @@
 				274013ED2606356700F5F833 /* BewerbungsListe.swift in Sources */,
 				274013F126073A3C00F5F833 /* EineBewerbungEinstellungen.swift in Sources */,
 				2702F59F261B5D3F001DEB6A /* DatenBewerbung.xcdatamodeld in Sources */,
-				274013F42607AE3900F5F833 /* Test.swift in Sources */,
 				2702F5A6261B5EC8001DEB6A /* PersistenceController.swift in Sources */,
 				270F217C2603EF1900D13D08 /* BewerbungsAppApp.swift in Sources */,
 				274013E92605F09300F5F833 /* BewerbungZeile.swift in Sources */,
+				2744F2BA26BDD439003D0603 /* CustomAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

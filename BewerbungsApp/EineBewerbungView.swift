@@ -31,6 +31,7 @@ struct EineBewerbungView: View {
                 //Datum Bewerbungsgespräch anzeigen
                 Text("Bewerbungsgespräche: \t\(eineBewerbung.bewerbungsGespraech != nil ? formatterStunden.string(from: eineBewerbung.bewerbungsGespraech!) : "Kein Datum")")
                 Text("Antwort:  \t\t\t\t\t\(eineBewerbung.antwortAusstehen ? "ausstehened" : "eingegangen")")
+                Text("Adresse:  \t\t\t\t\t\(eineBewerbung.adresse ?? "Unknown")")
             }
             .padding()
             

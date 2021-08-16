@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct EineBewerbungEinstellungen: View {
     
@@ -13,9 +14,12 @@ struct EineBewerbungEinstellungen: View {
     @State private var bewerbungsStatus:Int = 0
     @State private var bewerbungsGespraechDatum:Date = Date()
     @State private var firmenName = ""
+    @State private var adresse: String = ""
+    @State private var stadt: String = ""
     @State private var bewerbungsGespraech = false
     @Environment (\.presentationMode) var presentationMode: Binding <PresentationMode>
     @Environment(\.managedObjectContext) var managedObjectContext
+    @State private var coordinates = CLLocationCoordinate2D()
     
     
     
@@ -26,7 +30,17 @@ struct EineBewerbungEinstellungen: View {
             TextField("Firmennamen eingeben", text: $firmenName)
                 .padding()
                 .border(Color.gray)
-         
+            
+            //Die Adresse eingeben
+            TextField("Adresse der Firma eingeben", text: $adresse)
+                .padding()
+                .border(Color.gray)
+            
+            //Die Stadt eingeben
+            TextField("Die Stadt der Firma eingeben", text: $stadt)
+                .padding()
+                .border(Color.gray)
+            
             
             //Wählt den Bewerbungsstatus aus
             VStack {
@@ -73,22 +87,23 @@ struct EineBewerbungEinstellungen: View {
                     if bewerbungsStatus != eineBewerbung.absage{
                         eineBewerbung.absage = Int16(bewerbungsStatus)
                     }
-                    
-                    
-                    /*do{
-                        try self.managedObjectContext.save()
-                    }catch{
-                        print("Bewerbung konnte nicht gespeichert werden.")
-                    }*/
-                    
-                   /* if bewerbungsGespraech{
-                        eineBewerbung.setDatum(Datum: bewerbungsGespraechDatum)
+                    if !adresse.isEmpty {
+                        eineBewerbung.adresse = ("\(adresse), \(eineBewerbung.stadt), Switzerland")
+                        
+                        getCoordinate(addressString: adresse){ (responseCoordinate, error) in
+                            if error == nil {
+                                self.coordinates = responseCoordinate
+                                eineBewerbung.lat = self.coordinates.latitude
+                                eineBewerbung.long = self.coordinates.longitude
+                                print("Done \(self.adresse)")
+                            }
+                        }
                     }
-                    if !firmenName.isEmpty{
-                        eineBewerbung.firmenName = firmenName
+                    
+                    if !stadt.isEmpty{
+                        eineBewerbung.stadt = stadt
                     }
-                    eineBewerbung.setStatus(Status: bewerbungsStatus)
- */
+                    
                     self.presentationMode.wrappedValue.dismiss() // Geht eine View nach oben
                 }
             })
@@ -102,10 +117,29 @@ struct EineBewerbungEinstellungen: View {
     }
 }
 
-/*struct EineBewerbungEinstellungen_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView{
-            EineBewerbungEinstellungen(eineBewerbung: testDaten[1])
+func getCoordinate(addressString: String, completionHandler: @escaping(CLLocationCoordinate2D, NSError?) -> Void){
+    let geocoder = CLGeocoder()
+    
+    geocoder.geocodeAddressString(addressString) { (placemaks, error) in
+        
+        print(placemaks!)
+        if error == nil {
+            if let placemark = placemaks?[0]{
+                let location = placemark.location!
+                
+                completionHandler(location.coordinate, nil)
+                return
+            }
         }
+        completionHandler(kCLLocationCoordinate2DInvalid, error as NSError?)
+        
     }
-}*/
+}
+
+/*struct EineBewerbungEinstellungen_Previews: PreviewProvider {
+ static var previews: some View {
+ NavigationView{
+ EineBewerbungEinstellungen(eineBewerbung: testDaten[1])
+ }
+ }
+ }*/
