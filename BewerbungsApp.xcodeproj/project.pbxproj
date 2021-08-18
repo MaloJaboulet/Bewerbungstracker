@@ -13,7 +13,6 @@
 		270F217C2603EF1900D13D08 /* BewerbungsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270F217B2603EF1900D13D08 /* BewerbungsAppApp.swift */; };
 		270F217E2603EF1900D13D08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270F217D2603EF1900D13D08 /* ContentView.swift */; };
 		270F21802603EF2500D13D08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270F217F2603EF2500D13D08 /* Assets.xcassets */; };
-		270F21832603EF2500D13D08 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270F21822603EF2500D13D08 /* Preview Assets.xcassets */; };
 		270F218C2603F1F300D13D08 /* EineBewerbungView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270F218B2603F1F300D13D08 /* EineBewerbungView.swift */; };
 		270F218F2603F23000D13D08 /* EineBewerbung.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270F218E2603F23000D13D08 /* EineBewerbung.swift */; };
 		272ADBD026BC909500E61689 /* MapDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272ADBCF26BC909500E61689 /* MapDisplay.swift */; };
@@ -34,7 +33,6 @@
 		270F217B2603EF1900D13D08 /* BewerbungsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BewerbungsAppApp.swift; sourceTree = "<group>"; };
 		270F217D2603EF1900D13D08 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		270F217F2603EF2500D13D08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		270F21822603EF2500D13D08 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		270F21842603EF2500D13D08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		270F218B2603F1F300D13D08 /* EineBewerbungView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EineBewerbungView.swift; sourceTree = "<group>"; };
 		270F218E2603F23000D13D08 /* EineBewerbung.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EineBewerbung.swift; sourceTree = "<group>"; };
@@ -94,17 +92,8 @@
 				270F218E2603F23000D13D08 /* EineBewerbung.swift */,
 				270F217F2603EF2500D13D08 /* Assets.xcassets */,
 				270F21842603EF2500D13D08 /* Info.plist */,
-				270F21812603EF2500D13D08 /* Preview Content */,
 			);
 			path = BewerbungsApp;
-			sourceTree = "<group>";
-		};
-		270F21812603EF2500D13D08 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				270F21822603EF2500D13D08 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		2744F2B626BDC537003D0603 /* Map */ = {
@@ -181,7 +170,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				270F21832603EF2500D13D08 /* Preview Assets.xcassets in Resources */,
 				270F21802603EF2500D13D08 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,7 +325,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"BewerbungsApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 6MGT8LDKBB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = BewerbungsApp/Info.plist;
@@ -361,7 +348,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"BewerbungsApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 6MGT8LDKBB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = BewerbungsApp/Info.plist;

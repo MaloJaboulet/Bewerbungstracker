@@ -40,17 +40,17 @@ struct EineBewerbungView: View {
             VStack {
                 HStack {
                     Spacer()
-                    //Zeigt ob Bewerbung angenommen, abgesagt oder ausstehend ist
-                    Label(eineBewerbung.absage != 0 ? (eineBewerbung.absage == 1 ? "Angenommen": "Abgelehnt") : "Ausstehend", systemImage: eineBewerbung.absage != 0 ? (eineBewerbung.absage == 1 ? "checkmark.circle.fill": "xmark.octagon.fill") : "hourglass.tophalf.fill")
+                    //Zeigt ob Bewerbung angenommen, abgesagt, aussteht oder eine Bewerbungsgespräch geplant, ist
+                    Label(eineBewerbung.absage != 0 ? (eineBewerbung.absage != 1 ? (eineBewerbung.absage == 2 ? "Ausstehend" : "Abgeleht") : "Angenommen" ) : "Bewerbungsgespräch", systemImage: eineBewerbung.absage != 0 ? (eineBewerbung.absage != 1 ? (eineBewerbung.absage == 2 ? "hourglass.tophalf.fill" : "xmark.octagon") : "checkmark.circle" ) : "person.2.circle")
                         
                         .padding(10)
                     Spacer()
                 }
-                .background(eineBewerbung.absage != 0 ? (eineBewerbung.absage == 1 ? Color.green: Color.red) : Color.yellow)
+                .background(eineBewerbung.absage != 0 ? (eineBewerbung.absage != 1 ? (eineBewerbung.absage == 2 ? Color.yellow : Color.red) : Color.green) : Color.purple)
             }
-            .offset(x: 0, y: -30)
+            .offset(x: 0, y: 0)
         }
-        .edgesIgnoringSafeArea(.bottom)
+        //.edgesIgnoringSafeArea(.bottom)
         .preferredColorScheme(.dark)
         .toolbar(content: {
             ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing){

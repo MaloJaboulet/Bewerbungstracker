@@ -18,7 +18,6 @@ struct EineBewerbungEinstellungen: View {
     @State private var stadt: String = ""
     @State private var bewerbungsGespraech = false
     @Environment (\.presentationMode) var presentationMode: Binding <PresentationMode>
-    @Environment(\.managedObjectContext) var managedObjectContext
     @State private var coordinates = CLLocationCoordinate2D()
     
     
@@ -48,9 +47,9 @@ struct EineBewerbungEinstellungen: View {
                     .offset(x: 0, y: 75)
                     .font(.headline)
                 Picker(selection: $bewerbungsStatus, label: Text("Bewerbungsstatus")){
-                    Text("Ausstehend").tag(0)
                     Text("Angenommen").tag(1)
-                    Text("Abgelehnt").tag(2)
+                    Text("Ausstehend").tag(2)
+                    Text("Abgelehnt").tag(3)
                 }
                 .labelsHidden()
             }
@@ -78,9 +77,6 @@ struct EineBewerbungEinstellungen: View {
                 Button("Done") {
                     print(bewerbungsStatus)
                     
-                    if bewerbungsGespraech {
-                        eineBewerbung.bewerbungsGespraech = bewerbungsGespraechDatum
-                    }
                     if !firmenName.isEmpty{
                         eineBewerbung.firmenName = firmenName
                     }
@@ -102,6 +98,10 @@ struct EineBewerbungEinstellungen: View {
                     
                     if !stadt.isEmpty{
                         eineBewerbung.stadt = stadt
+                    }
+                    if bewerbungsGespraech {
+                        eineBewerbung.bewerbungsGespraech = bewerbungsGespraechDatum
+                        eineBewerbung.absage = 0
                     }
                     
                     self.presentationMode.wrappedValue.dismiss() // Geht eine View nach oben
