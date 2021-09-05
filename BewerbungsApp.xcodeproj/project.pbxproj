@@ -22,7 +22,6 @@
 		274013ED2606356700F5F833 /* BewerbungsListe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274013EC2606356700F5F833 /* BewerbungsListe.swift */; };
 		274013F126073A3C00F5F833 /* EineBewerbungEinstellungen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274013F026073A3B00F5F833 /* EineBewerbungEinstellungen.swift */; };
 		2744F2B826BDC549003D0603 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2744F2B726BDC549003D0603 /* MapView.swift */; };
-		2744F2BA26BDD439003D0603 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2744F2B926BDD439003D0603 /* CustomAlert.swift */; };
 		27EE550826C0833F006BB9AB /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE550726C0833F006BB9AB /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +42,6 @@
 		274013EC2606356700F5F833 /* BewerbungsListe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BewerbungsListe.swift; sourceTree = "<group>"; };
 		274013F026073A3B00F5F833 /* EineBewerbungEinstellungen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EineBewerbungEinstellungen.swift; sourceTree = "<group>"; };
 		2744F2B726BDC549003D0603 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		2744F2B926BDD439003D0603 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		27EE550726C0833F006BB9AB /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,7 +99,6 @@
 			children = (
 				272ADBCF26BC909500E61689 /* MapDisplay.swift */,
 				2744F2B726BDC549003D0603 /* MapView.swift */,
-				2744F2B926BDD439003D0603 /* CustomAlert.swift */,
 				27EE550726C0833F006BB9AB /* LocationManager.swift */,
 			);
 			path = Map;
@@ -195,7 +192,6 @@
 				2702F5A6261B5EC8001DEB6A /* PersistenceController.swift in Sources */,
 				270F217C2603EF1900D13D08 /* BewerbungsAppApp.swift in Sources */,
 				274013E92605F09300F5F833 /* BewerbungZeile.swift in Sources */,
-				2744F2BA26BDD439003D0603 /* CustomAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +324,7 @@
 				DEVELOPMENT_TEAM = 6MGT8LDKBB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = BewerbungsApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -351,7 +347,7 @@
 				DEVELOPMENT_TEAM = 6MGT8LDKBB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = BewerbungsApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

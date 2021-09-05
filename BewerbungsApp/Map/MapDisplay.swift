@@ -11,7 +11,6 @@ import MapKit
 
 struct MapDisplay: View {
     var bewerbungen: FetchedResults<Bewerbungen>
-    let geocoder = CLGeocoder()
     @State var centerCoordinate: CLLocationCoordinate2D
     @State private var locations = [MKPointAnnotation]()
     @Binding var deletePinLocation: CLLocationCoordinate2D?
@@ -74,7 +73,7 @@ struct MapDisplay: View {
             if bewerbung.lat == 0.0 || bewerbung.long == 0.0{
                 
                 
-                getCoordinate(addressString: bewerbung.adresse ?? "Unknown"){ (responseCoordinate, error) in
+                getCoordinate(addressString: "\(bewerbung.adresse ?? "Unknown"), \(bewerbung.stadt ?? "Unknown"), Switzerland"){ (responseCoordinate, error) in
                     if error == nil {
                         coordinates = responseCoordinate
                         bewerbung.lat = coordinates.latitude
@@ -87,7 +86,7 @@ struct MapDisplay: View {
             //Macht einen neuen Pin auf der Map
             let newLocation = MKPointAnnotation()
             newLocation.title = bewerbung.firmenName
-            newLocation.subtitle = bewerbung.adresse
+            newLocation.subtitle = "\(bewerbung.adresse ?? "Unknown"), \(bewerbung.stadt ?? "Unknown")"
             newLocation.coordinate = CLLocationCoordinate2D(latitude: bewerbung.lat, longitude: bewerbung.long)
             self.locations.append(newLocation)
         }

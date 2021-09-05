@@ -17,6 +17,7 @@ struct EineBewerbungView: View {
         let formatterStunden = DateFormatter()
         formatterStunden.dateFormat = "dd.MM.yyyy HH:mm"
         
+        
         return VStack(alignment: .leading, spacing: 10){
             
             Spacer()
@@ -32,6 +33,7 @@ struct EineBewerbungView: View {
                 Text("Bewerbungsgespräche: \t\(eineBewerbung.bewerbungsGespraech != nil ? formatterStunden.string(from: eineBewerbung.bewerbungsGespraech!) : "Kein Datum")")
                 Text("Antwort:  \t\t\t\t\t\(eineBewerbung.antwortAusstehen ? "ausstehened" : "eingegangen")")
                 Text("Adresse:  \t\t\t\t\t\(eineBewerbung.adresse ?? "Unknown")")
+                Text("Stadt:  \t\t\t\t\t\t\(eineBewerbung.stadt ?? "Unknown")")
             }
             .padding()
             

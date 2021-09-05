@@ -79,7 +79,7 @@ struct EineBewerbungAdden: View {
             })
         }
         
-        .navigationBarTitle("Bewerbung hinzufügen", displayMode: .automatic)
+        .navigationBarTitle("Bewerbung adden", displayMode: .automatic)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton)
         .preferredColorScheme(.dark)
@@ -91,6 +91,7 @@ struct EineBewerbungAdden: View {
                     if !firmenName.isEmpty { //Wenn der Name der Firma nicht eingetragen wurde, wird die Bewerbung nicht gespeichert.
                         //Speichert alle Daten, auch das Bewerbungsgespräch
                         datenSpeichern(Bewerbung: bewerbungD, Firmenname: firmenName, Absage: 0, Bewerbungsgespräch: datum, Adresse: adresse, Stadt: stadt)
+                        bewerbungD.antwortAusstehen = false
                     }
                 }else{
                     if !firmenName.isEmpty { //Wenn der Name der Firma nicht eingetragen wurde, wird die Bewerbung nicht gespeichert.
@@ -98,7 +99,7 @@ struct EineBewerbungAdden: View {
                         datenSpeichern(Bewerbung: bewerbungD, Firmenname: firmenName, Absage: 2, Bewerbungsgespräch: nil, Adresse: adresse, Stadt: stadt)
                     }
                 }
-                self.getCoordinate(addressString: adresse){ (responseCoordinate, error) in
+                self.getCoordinate(addressString: "\(adresse), \(stadt), Switzerland"){ (responseCoordinate, error) in
                     if error == nil {
                         self.coordinates = responseCoordinate
                         bewerbungD.lat = self.coordinates.latitude
@@ -143,7 +144,7 @@ struct EineBewerbungAdden: View {
         bewerbung.absage = absage
         bewerbung.bewerbungsGespraech = bewerbungsgespraech
         bewerbung.antwortAusstehen = true
-        bewerbung.adresse = "\(adresse), \(stadt), Switzerland"
+        bewerbung.adresse = adresse
         bewerbung.stadt = stadt
     }
 }

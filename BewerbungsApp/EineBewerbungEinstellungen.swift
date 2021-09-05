@@ -75,18 +75,21 @@ struct EineBewerbungEinstellungen: View {
         .toolbar(content: {
             ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing, content: {
                 Button("Done") {
-                    print(bewerbungsStatus)
                     
                     if !firmenName.isEmpty{
                         eineBewerbung.firmenName = firmenName
                     }
+                   
                     if bewerbungsStatus != eineBewerbung.absage{
-                        eineBewerbung.absage = Int16(bewerbungsStatus)
+                        if bewerbungsStatus != 0 && bewerbungsGespraech{
+                            eineBewerbung.absage = Int16(bewerbungsStatus)
+                            eineBewerbung.antwortAusstehen = false
+                        }
                     }
                     if !adresse.isEmpty {
-                        eineBewerbung.adresse = ("\(adresse), \(eineBewerbung.stadt), Switzerland")
+                        eineBewerbung.adresse = adresse
                         
-                        getCoordinate(addressString: adresse){ (responseCoordinate, error) in
+                        getCoordinate(addressString: "\(adresse), \(eineBewerbung.stadt ?? "Unknown"), Switzerland"){ (responseCoordinate, error) in
                             if error == nil {
                                 self.coordinates = responseCoordinate
                                 eineBewerbung.lat = self.coordinates.latitude
@@ -102,6 +105,7 @@ struct EineBewerbungEinstellungen: View {
                     if bewerbungsGespraech {
                         eineBewerbung.bewerbungsGespraech = bewerbungsGespraechDatum
                         eineBewerbung.absage = 0
+                        eineBewerbung.antwortAusstehen = false
                     }
                     
                     self.presentationMode.wrappedValue.dismiss() // Geht eine View nach oben
@@ -122,7 +126,7 @@ func getCoordinate(addressString: String, completionHandler: @escaping(CLLocatio
     
     geocoder.geocodeAddressString(addressString) { (placemaks, error) in
         
-        print(placemaks!)
+        
         if error == nil {
             if let placemark = placemaks?[0]{
                 let location = placemark.location!
