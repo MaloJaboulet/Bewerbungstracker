@@ -71,12 +71,15 @@ struct EineBewerbungAdden: View {
             Spacer()
             
             //Bewerbung speichern
-            Button(action: {
-                self.speichern = true
-                self.presentationMode.wrappedValue.dismiss() // Geht eine View nach oben
-            }, label: {
-                Text("Speichern")
-            })
+            
+            if !firmenName.trimmingCharacters(in: .whitespaces).isEmpty{
+                Button(action: {
+                    self.speichern = true
+                    self.presentationMode.wrappedValue.dismiss() // Geht eine View nach oben
+                }, label: {
+                    Text("Speichern")
+                })
+            }
         }
         
         .navigationBarTitle("Bewerbung adden", displayMode: .automatic)
@@ -87,16 +90,17 @@ struct EineBewerbungAdden: View {
         .onDisappear(){
             if speichern{
                 let bewerbungD = Bewerbungen(context: managedObjectContext)
+                firmenName = firmenName.trimmingCharacters(in: .whitespaces)
                 if bewerbungsGespraech{
                     if !firmenName.isEmpty { //Wenn der Name der Firma nicht eingetragen wurde, wird die Bewerbung nicht gespeichert.
                         //Speichert alle Daten, auch das Bewerbungsgespräch
-                        datenSpeichern(Bewerbung: bewerbungD, Firmenname: firmenName, Absage: 0, Bewerbungsgespräch: datum, Adresse: adresse, Stadt: stadt)
+                        datenSpeichern(Bewerbung: bewerbungD, Firmenname: firmenName, Absage: 1, Bewerbungsgespräch: datum, Adresse: adresse, Stadt: stadt)
                         bewerbungD.antwortAusstehen = false
                     }
                 }else{
                     if !firmenName.isEmpty { //Wenn der Name der Firma nicht eingetragen wurde, wird die Bewerbung nicht gespeichert.
                         //Speichert alle Daten ohne das Bewerbungsgespräch
-                        datenSpeichern(Bewerbung: bewerbungD, Firmenname: firmenName, Absage: 2, Bewerbungsgespräch: nil, Adresse: adresse, Stadt: stadt)
+                        datenSpeichern(Bewerbung: bewerbungD, Firmenname: firmenName, Absage: 0, Bewerbungsgespräch: nil, Adresse: adresse, Stadt: stadt)
                     }
                 }
                 self.getCoordinate(addressString: "\(adresse), \(stadt), Switzerland"){ (responseCoordinate, error) in

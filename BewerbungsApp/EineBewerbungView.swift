@@ -43,12 +43,12 @@ struct EineBewerbungView: View {
                 HStack {
                     Spacer()
                     //Zeigt ob Bewerbung angenommen, abgesagt, aussteht oder eine Bewerbungsgespräch geplant, ist
-                    Label(eineBewerbung.absage != 0 ? (eineBewerbung.absage != 1 ? (eineBewerbung.absage == 2 ? "Ausstehend" : "Abgeleht") : "Angenommen" ) : "Bewerbungsgespräch", systemImage: eineBewerbung.absage != 0 ? (eineBewerbung.absage != 1 ? (eineBewerbung.absage == 2 ? "hourglass.tophalf.fill" : "xmark.octagon") : "checkmark.circle" ) : "person.2.circle")
+                    Label(eineBewerbung.absage != 0 ? (eineBewerbung.absage != 1 ? (eineBewerbung.absage == 2 ? "Angenommen" : "Abgeleht") : "Bewerbungsgespräch" ) : "Ausstehend", systemImage: eineBewerbung.absage != 0 ? (eineBewerbung.absage != 1 ? (eineBewerbung.absage == 2 ? "checkmark.circle" : "xmark.octagon") : "person.2.circle" ) : "hourglass.tophalf.fill")
                         
                         .padding(10)
                     Spacer()
                 }
-                .background(eineBewerbung.absage != 0 ? (eineBewerbung.absage != 1 ? (eineBewerbung.absage == 2 ? Color.yellow : Color.red) : Color.green) : Color.purple)
+                .background(eineBewerbung.absage != 0 ? (eineBewerbung.absage != 1 ? (eineBewerbung.absage == 2 ? Color.green : Color.red) : Color.purple) : Color.yellow)
             }
             .offset(x: 0, y: 0)
         }

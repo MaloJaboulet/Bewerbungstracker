@@ -47,8 +47,8 @@ struct EineBewerbungEinstellungen: View {
                     .offset(x: 0, y: 75)
                     .font(.headline)
                 Picker(selection: $bewerbungsStatus, label: Text("Bewerbungsstatus")){
-                    Text("Angenommen").tag(1)
-                    Text("Ausstehend").tag(2)
+                    Text("Ausstehend").tag(4)
+                    Text("Angenommen").tag(2)
                     Text("Abgelehnt").tag(3)
                 }
                 .labelsHidden()
@@ -79,12 +79,14 @@ struct EineBewerbungEinstellungen: View {
                     if !firmenName.isEmpty{
                         eineBewerbung.firmenName = firmenName
                     }
-                   
+                    
                     if bewerbungsStatus != eineBewerbung.absage{
-                        if bewerbungsStatus != 0 && bewerbungsGespraech{
-                            eineBewerbung.absage = Int16(bewerbungsStatus)
-                            eineBewerbung.antwortAusstehen = false
+                        if bewerbungsStatus == 4 {
+                            bewerbungsStatus = 0
                         }
+                        eineBewerbung.absage = Int16(bewerbungsStatus)
+                        eineBewerbung.antwortAusstehen = false
+                        
                     }
                     if !adresse.isEmpty {
                         eineBewerbung.adresse = adresse
@@ -104,7 +106,7 @@ struct EineBewerbungEinstellungen: View {
                     }
                     if bewerbungsGespraech {
                         eineBewerbung.bewerbungsGespraech = bewerbungsGespraechDatum
-                        eineBewerbung.absage = 0
+                        eineBewerbung.absage = 1
                         eineBewerbung.antwortAusstehen = false
                     }
                     

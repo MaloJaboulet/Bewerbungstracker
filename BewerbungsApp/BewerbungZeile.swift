@@ -16,7 +16,7 @@ struct BewerbungZeile: View {
                     .font(.title)
                     .padding()
                 Spacer()
-            }.background(bewerbung.absage != 0 ? (bewerbung.absage != 1 ? (bewerbung.absage == 2 ? Color.yellow : Color.red) : Color.green) : Color.purple)
+            }.background(bewerbung.absage != 0 ? (bewerbung.absage != 1 ? (bewerbung.absage == 2 ? Color.green : Color.red) : Color.purple) : Color.yellow)
         }
     
     }
