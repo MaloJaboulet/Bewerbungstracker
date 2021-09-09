@@ -94,13 +94,13 @@ struct EineBewerbungAdden: View {
                 if bewerbungsGespraech{
                     if !firmenName.isEmpty { //Wenn der Name der Firma nicht eingetragen wurde, wird die Bewerbung nicht gespeichert.
                         //Speichert alle Daten, auch das Bewerbungsgespräch
-                        datenSpeichern(Bewerbung: bewerbungD, Firmenname: firmenName, Absage: 1, Bewerbungsgespräch: datum, Adresse: adresse, Stadt: stadt)
+                        datenSpeichern(Bewerbung: bewerbungD, Firmenname: firmenName, Absage: 0, Bewerbungsgespräch: datum, Adresse: adresse, Stadt: stadt)
                         bewerbungD.antwortAusstehen = false
                     }
                 }else{
                     if !firmenName.isEmpty { //Wenn der Name der Firma nicht eingetragen wurde, wird die Bewerbung nicht gespeichert.
                         //Speichert alle Daten ohne das Bewerbungsgespräch
-                        datenSpeichern(Bewerbung: bewerbungD, Firmenname: firmenName, Absage: 0, Bewerbungsgespräch: nil, Adresse: adresse, Stadt: stadt)
+                        datenSpeichern(Bewerbung: bewerbungD, Firmenname: firmenName, Absage: 2, Bewerbungsgespräch: nil, Adresse: adresse, Stadt: stadt)
                     }
                 }
                 self.getCoordinate(addressString: "\(adresse), \(stadt), Switzerland"){ (responseCoordinate, error) in
